@@ -5,5 +5,5 @@ Comment=A simple wrapper that does winetricks things for Proton enabled games
 Type=Application
 Terminal=false
 Categories=Utility;
-Icon=com.github.Matoking.protontricks.
+Icon=com.github.Matoking.protontricks
 Keywords=Steam;Proton;Wine;Winetricks;

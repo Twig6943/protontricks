@@ -1,7 +1,7 @@
 # Maintainer: Mark Wagie <mark dot wagie at proton dot me>
 # Contributor: Jason Stryker <public at jasonstryker dot com>
 pkgname=protontricks-git
-pkgver=1.14.1.r9.g5e9cb10
+pkgver=1.14.1.r11.g8d2e25c
 pkgrel=1
 pkgdesc="A simple wrapper that does winetricks things for Proton enabled games."
 arch=('any')
@@ -62,7 +62,7 @@ package() {
   cd "${pkgname%-git}"
   python -m installer --destdir="$pkgdir" dist/*.whl
 
-  install -Dm644 "src/protontricks/data/share/applications/icon_scalable.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg"
+  install -Dm644 "src/protontricks/data/share/applications/com.github.Matoking.protontricks.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg"
   # Remove protontricks-desktop-install, since we already install
   # desktop files properly
   rm -v "$pkgdir/usr/bin/${pkgname%-git}-desktop-install"
