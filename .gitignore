@@ -118,3 +118,12 @@ pip-selfcheck.json
 
 
 # End of https://www.gitignore.io/api/python,virtualenv
+
+*.kate-swp
+
+AppDir/
+*.AppImage
+*.src.tar.gz
+*.pkg.tar.zst
+src/protontricks/data/share/applications/pkg
+src/protontricks/data/share/applications/protontricks
