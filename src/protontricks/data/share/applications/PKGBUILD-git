@@ -1,7 +1,7 @@
 # Maintainer: Mark Wagie <mark dot wagie at proton dot me>
 # Contributor: Jason Stryker <public at jasonstryker dot com>
 pkgname=protontricks-git
-pkgver=1.14.1.r7.ge480893
+pkgver=1.14.1.r9.g5e9cb10
 pkgrel=1
 pkgdesc="A simple wrapper that does winetricks things for Proton enabled games."
 arch=('any')
@@ -31,7 +31,7 @@ optdepends=(
 )
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-source=('git+https://github.com/Matoking/protontricks.git')
+source=('git+https://github.com/twig6943/protontricks.git')
 sha256sums=('SKIP')
 
 pkgver() {
