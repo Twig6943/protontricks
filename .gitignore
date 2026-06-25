@@ -123,6 +123,8 @@ pip-selfcheck.json
 
 AppDir/
 *.AppImage
+quick-sharun
+get-debloated-pkgs
 *.src.tar.gz
 *.pkg.tar.zst
 src/protontricks/data/share/applications/pkg

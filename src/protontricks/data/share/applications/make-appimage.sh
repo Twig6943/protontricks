@@ -14,9 +14,9 @@ fi
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
-export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/usr/share/icons/hicolor/512x512/apps/io.github.reakjra.omikuji.png
-export DESKTOP=/usr/share/applications/io.github.reakjra.omikuji.desktop
+#export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg
+export DESKTOP=/usr/share/applications/com.github.Matoking.protontricks.desktop
 
 #Remove leftovers
 rm -rf AppDir dist
@@ -27,10 +27,10 @@ wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
 chmod +x ./quick-sharun ./get-debloated-pkgs
 
 # Debloated pkgs
-./get-debloated-pkgs --add-common --prefer-nano
+#./get-debloated-pkgs --add-common --prefer-nano
 
 # Deploy dependencies
-./quick-sharun /usr/bin/protontricks
+./quick-sharun /usr/bin/protontricks /usr/bin/protontricks-launch
 
 # Turn AppDir into AppImage
 ./quick-sharun --make-appimage
