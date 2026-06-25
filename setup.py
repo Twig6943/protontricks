@@ -9,9 +9,9 @@ setup(
             "share/applications",
             [
                 ("src/protontricks/data/share/applications/"
-                 "protontricks.desktop"),
+                 "com.github.Matoking.protontricks.desktop"),
                 ("src/protontricks/data/share/applications/"
-                 "protontricks-launch.desktop")
+                 "com.github.Matoking.protontricks-launch.desktop")
             ]
         )
     ]
