@@ -9,10 +9,9 @@ export ARCH VERSION
 SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 DEBLOATED_PKGS="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 
-#export APPDIR="$PWD/AppDir"
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
-#export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg
 export DESKTOP=/usr/share/applications/protontricks.desktop
 export LIB_DIR=/usr/lib
