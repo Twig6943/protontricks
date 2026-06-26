@@ -30,8 +30,8 @@ makedepends=(
 )
 checkdepends=('python-pytest')
 
-source=("git+$url.git#tag=$pkgver")
-b2sums=('beef1b9c7d7ca6a724a3777560d0109ad415d199efe130cb6a6d70139c6ad327f83bdf657ef035cd8a7dc66aea7f0c4d5dde0c72d2549750b913ababba7e5710')
+source=("git+$url.git#branch=appimage")
+b2sums=('SKIP')
 
 build() {
   cd $pkgname
@@ -47,11 +47,12 @@ check() {
 
 package() {
   cd $pkgname
+  install -vDm644 src/protontricks/data/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/com.github.Matoking.protontricks.svg"
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" ./*.md
 
   # We already install the desktop entries, not needed
-  rm -v "$pkgdir/usr/bin/protontricks-desktop-install"
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  rm -vr "$pkgdir/$site_packages/protontricks/data/share"
+  #rm -v "$pkgdir/usr/bin/protontricks-desktop-install"
+  #local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  #rm -vr "$pkgdir/$site_packages/protontricks/data/share"
 }
