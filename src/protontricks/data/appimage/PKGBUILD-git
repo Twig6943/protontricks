@@ -15,10 +15,10 @@ depends=(
   'python-pillow'
   'python-vdf'
   'winetricks'
-  'zenity'
-  'yad'
   'openjpeg2'
   'libimagequant'
+  'zenity'
+  'yad'
 )
 makedepends=(
   'git'
@@ -52,7 +52,7 @@ package() {
   install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" ./*.md
 
   # We already install the desktop entries, not needed
-  #rm -v "$pkgdir/usr/bin/protontricks-desktop-install"
-  #local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  #rm -vr "$pkgdir/$site_packages/protontricks/data/share"
+  rm -v "$pkgdir/usr/bin/protontricks-desktop-install"
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  rm -vr "$pkgdir/$site_packages/protontricks/data/share"
 }

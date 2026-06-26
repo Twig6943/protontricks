@@ -8,11 +8,11 @@ ARCH=$(uname -m)
 DEBLOATED_PKGS="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 wget --retry-connrefused --tries=30 "$DEBLOATED_PKGS" -O ./get-debloated-pkgs
 
-chmod +x ./quick-sharun ./get-debloated-pkgs
+chmod +x ./get-debloated-pkgs
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm protontricks zenity yad
+makepkg -p PKGBUILD-git -fsi --noconfirm
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
