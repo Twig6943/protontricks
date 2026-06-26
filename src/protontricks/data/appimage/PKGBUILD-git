@@ -30,9 +30,12 @@ makedepends=(
 )
 checkdepends=('python-pytest')
 
-export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
-source=("git+$url.git#branch=appimage")
-b2sums=('SKIP')
+source=()
+b2sums=()
+
+prepare() {
+  git clone --depth 1 --branch appimage "$url.git" "$pkgname"
+}
 
 build() {
   cd $pkgname
