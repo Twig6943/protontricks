@@ -30,7 +30,7 @@ makedepends=(
 )
 checkdepends=('python-pytest')
 
-source=("git+$url.git#branch=appimage")
+source=("$pkgname::git+$url.git#branch=appimage")
 b2sums=('SKIP')
 
 build() {
