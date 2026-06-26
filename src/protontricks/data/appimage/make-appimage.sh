@@ -4,17 +4,11 @@ set -eu
 
 ARCH=$(uname -m)
 VERSION=$(pacman -Q protontricks | awk '{print $2; exit}') # example command to get version of application here
+export ARCH VERSION
 
 SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
+DEBLOATED_PKGS="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 
-#Remove leftovers
-rm -rf AppDir dist
-
-# ADD LIBRARIES
-wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
-chmod +x ./quick-sharun
-
-export ARCH VERSION
 #export APPDIR="$PWD/AppDir"
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
@@ -25,6 +19,17 @@ export LIB_DIR=/usr/lib
 export DEPLOY_PYTHON=1
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
+
+#Remove leftovers
+rm -rf AppDir dist
+
+# ADD LIBRARIES
+wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
+wget --retry-connrefused --tries=30 "$DEBLOATED_PKGS" -O ./get-debloated-pkgs
+chmod +x ./quick-sharun ./get-debloated-pkgs
+
+# Debloated pkgs
+./get-debloated-pkgs --add-common --prefer-nano
 
 # Deploy dependencies
 ./quick-sharun \

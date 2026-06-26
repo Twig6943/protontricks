@@ -61,8 +61,7 @@ jobs:
           ls -lh
           cd src/protontricks/data/appimage
           pacman --noconfirm -U ./*.pkg.tar.zst
-          chmod +x ./get-dependencies.sh ./make-appimage.sh
-          ./get-dependencies.sh
+          chmod +x ./make-appimage.sh
           ./make-appimage.sh
 
       - name: Upload build artifacts
