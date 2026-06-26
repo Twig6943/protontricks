@@ -126,6 +126,6 @@ AppDir/
 
 quick-sharun*
 get-debloated-pkgs*
-src/protontricks/data/appimage/protontricks/pkg
 src/protontricks/data/appimage/protontricks/
 src/protontricks/data/appimage/protontricks/src/
+src/protontricks/data/appimage/pkg/

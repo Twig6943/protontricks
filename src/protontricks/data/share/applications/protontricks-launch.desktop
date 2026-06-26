@@ -5,5 +5,5 @@ Type=Application
 Terminal=false
 NoDisplay=true
 Categories=Utility
-Icon=wine
+Icon=com.github.Matoking.protontricks
 MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shortcut;
