@@ -68,7 +68,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: AppImage
-          path: "packaging/dist/*.AppImage"
+          path: "src/protontricks/data/appimage/dist/*.AppImage"
           archive: false
 
       - name: Create GitHub Release
